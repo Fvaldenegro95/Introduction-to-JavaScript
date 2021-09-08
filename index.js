@@ -96,7 +96,6 @@ Do the following:
 */
 
 function dogYears(age){
-  var dogYears = 7*age;
   return age*7;
 }
 
@@ -129,30 +128,46 @@ Puppies less than 1 year
 NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(age, weight){
-  if (age >= 1 && weight <= 5){
-    return weight * 0.05;
+// function hungryDog(weight, age){
+//   if (age >= 1 && weight <= 5){
+//     return weight * 0.05;
 
-  } else if (age >= 1 && weight <=10 && weight >= 6){
-    return weight * 0.04}
+//   } else if (age >= 1 && weight <=10 && weight >= 6){
+//     return weight * 0.04}
     
-    else if (age >= 1 && weight <=15 && weight >= 11){
-    return weight * 0.03
+//     else if (age >= 1 && weight <=15 && weight >= 11){
+//     return weight * 0.03
+//   }
+//     else if (age >= 1 && weight >15){
+//     return weight * 0.02
+//   }
+//     else if (age < .58 && age >= .33){
+//       return weight * 0.5
+//     }
+//     else if (age < .33){
+//       return weight * 0.1
+//     }
+//     else if (age < 1 && age >= .58){
+//       return weight * 0.4
+//     }
+// }
+function hungryDog(weight, age) {
+  if (age >= 1 && weight <= 5) {
+    return weight * 0.05;
+  } else if (age >= 1 && weight >= 6 && weight <= 10) {
+    return weight * 0.04;
+  } else if (age >= 1 && weight >= 11 && weight <= 15) {
+    return weight * 0.03;
+  } else if (age >= 1 && weight > 15) {
+    return weight * 0.02;
+  } else if (age < 1 && age >= 0.583) {
+    return weight * 0.04;
+  } else if (age < 0.583 && age >= 0.333) {
+    return weight * 0.05;
+  } else if (age < 0.333) {
+    return weight * 0.1;
   }
-    else if (age >= 1 && weight >15){
-    return weight * 0.02
-  }
-    else if (age < .58){
-      return weight * 0.04
-    }
-    else if (age < .33){
-      return weight * 0.05
-    }
-    else if (age < .16){
-      return weight * 0.10
-    }
 }
-
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -233,8 +248,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(centimeters){
-  return centimeters * 0.032808;
+function feet(cm){
+  return (cm / 30.48);
 }
 
 
@@ -249,8 +264,11 @@ Using the annoyingSong function below do the following:
     "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-      /*add your code here*/
+function annoyingSong(number){{
+
+  for(let i = number; i > 1; i--){
+  return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i - 1} bottles of soda on the wall`;}
+  } 
 }
 
 
@@ -269,8 +287,22 @@ Using the grade function below do the following:
  below should return 'you got an F'
 */
 
-function grade(/*Your Code here */){
-/*Your Code here */
+function grade(score){
+  if (score >= 90) {
+    return 'you got an A'
+  }
+   else if (score >= 80) {
+      return 'you got a B'
+    }
+    else if (score >= 70) {
+        return 'you got a C'
+      }
+      else if (score >= 60) {
+          return 'you got a D'
+        }
+        else {
+            return 'you got an F'
+          }
 }
 
 
